@@ -16,7 +16,7 @@ bin/
 Thumbs.db
 desktop.ini
 .DS_Store
-
+.settings/
 # NO se ignoran (se suben al repo):
 #   .project
 #   .classpath
