@@ -1,16 +1,17 @@
 
 package logica;
 
-public class Docente {
-    private int id;
+public class Docente extends Investigador {
     private CategoriaDocente categoriaDocente;
     private CategoriaCientifica categoriaCientifica;
 
     
-    public Docente(int id, CategoriaDocente categoriaDocente, CategoriaCientifica categoriaCientifica) {
+    public Docente(int id,String nombre, CategoriaDocente categoriaDocente, CategoriaCientifica categoriaCientifica) {
         setId(id);
+        super.setNombre(nombre);
         setCategoriaDocente(categoriaDocente);
         setCategoriaCientifica(categoriaCientifica);
+        
     }
     
     
