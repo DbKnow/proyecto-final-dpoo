@@ -6,7 +6,7 @@ public class LineaInvestigacion {
 	private int id;
 	private String nombre;
 	private Docente responsable;
-	private ArrayList<Participacion> participaciones= new ArrayList();
+	private ArrayList<Participacion> participaciones= new ArrayList<>();
 	
 	
 	// ---------- id ----------

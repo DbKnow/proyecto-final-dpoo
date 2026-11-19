@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class CapituloLibro implements IPuntuable{
 	private int id;
 	private String titulo;
-	private ArrayList<String> editores = new ArrayList();
+	private ArrayList<String> editores = new ArrayList<>();
 	private String editorial;
 	private String issn;
 	private String nombreLibro;

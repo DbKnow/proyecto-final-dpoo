@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public abstract class Investigador {
 	protected int id;
 	protected String nombre;
-	protected ArrayList<IPuntuable> resultados = new ArrayList();
+	protected ArrayList<IPuntuable> resultados = new ArrayList<>();
 	
 	
 	// ---------- id ----------
@@ -55,7 +55,7 @@ public abstract class Investigador {
 		
 	}
 	
-	public int CalcularPuntaje(){
+	public int calcularPuntaje(){
 		return 0;
 		
 	}
