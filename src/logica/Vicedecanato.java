@@ -90,7 +90,7 @@ public class Vicedecanato {
 
 	public void agregarLinea(LineaInvestigacion l) {
 		if (l == null) {
-			throw new IllegalArgumentException("La línea no puede ser nula.");
+			throw new IllegalArgumentException("La l\u00ednea no puede ser nula.");
 		}
 		lineas.add(l);
 	}
