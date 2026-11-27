@@ -1,1 +1,0 @@
-A \u00ed B \\n C "q" D	tab
