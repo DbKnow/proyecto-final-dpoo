@@ -73,7 +73,18 @@ public class Docente extends Investigador {
         inscripciones.add(inscripcion);
     }
 
+    
+    public void eliminarInscripcion(InscripcionCurso inscripcion) {
+        if (inscripcion == null) {
+            throw new IllegalArgumentException("La inscripción no puede ser nula.");
+        }
 
+        if (!inscripciones.remove(inscripcion)) {
+            throw new IllegalArgumentException("La inscripción no existe.");
+        }
+    }
+
+    
     public boolean esDoctor() {
         return categoriaCientifica == CategoriaCientifica.DOCTOR;
     }

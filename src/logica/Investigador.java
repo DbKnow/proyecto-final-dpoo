@@ -51,9 +51,29 @@ public abstract class Investigador {
 		}
 	
 	
-	public void AgregarResultados(){
+		public void agregarResultado(IPuntuable resultado) {
+		    if (resultado == null) {
+		        throw new IllegalArgumentException("El resultado no puede ser nulo.");
+		    }
+
+		    if (resultados.contains(resultado)) {
+		        throw new IllegalArgumentException("El investigador ya tiene asociado este resultado.");
+		    }
+
+		    resultados.add(resultado);
+		}
 		
-	}
+		
+		public void eliminarResultado(IPuntuable resultado) {
+		    if (resultado == null) {
+		        throw new IllegalArgumentException("El resultado no puede ser nulo.");
+		    }
+
+		    if (!resultados.remove(resultado)) {
+		        throw new IllegalArgumentException("El resultado no está asociado a este investigador.");
+		    }
+		}
+		
 	
 	public int calcularPuntaje(){
 		return 0;

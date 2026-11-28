@@ -8,6 +8,13 @@ public class Participacion {
 	private String tema;
 	
 	
+	public Participacion(int id, Investigador investigador, String tema) {
+	    setId(id);
+	    setInvestigador(investigador);
+	    setTema(tema);
+	}
+	
+	
 	// ---------- id ----------
 		public int getId() {
 			return id;

@@ -152,7 +152,29 @@ public class CursoPosgrado {
         docente.agregarInscripcion(inscripcion);
     }
 
+    
+    public void darDeBaja(Docente docente) {
+        if (docente == null) {
+            throw new IllegalArgumentException("El docente no puede ser nulo.");
+        }
 
+        InscripcionCurso inscripcionEliminar = null;
+
+        for (InscripcionCurso inscripcion : inscripciones) {
+            if (inscripcion.getParticipante().getId() == docente.getId()) {
+                inscripcionEliminar = inscripcion;
+            }
+        }
+
+        if (inscripcionEliminar == null) {
+            throw new IllegalArgumentException("El docente no está inscrito en este curso.");
+        }
+
+        inscripciones.remove(inscripcionEliminar);
+        docente.eliminarInscripcion(inscripcionEliminar);
+    }
+
+    
     public void asignarNota(Docente docente, double nota) {
         if (docente == null) {
             throw new IllegalArgumentException("El docente no puede ser nulo.");

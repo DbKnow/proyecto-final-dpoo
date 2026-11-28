@@ -9,6 +9,14 @@ public class LineaInvestigacion {
 	private ArrayList<Participacion> participaciones= new ArrayList<>();
 	
 	
+	public LineaInvestigacion(int id, String nombre, Docente responsable) {
+	    setId(id);
+	    setNombre(nombre);
+	    setResponsable(responsable);
+	    this.participaciones = new ArrayList<Participacion>();
+	}
+	
+	
 	// ---------- id ----------
 		public int getId() {
 			return id;
@@ -65,15 +73,50 @@ public class LineaInvestigacion {
 	
 	
 	
-	public void agregarParticipacion(Investigador i , String tema){
-		
-	}
+		public void agregarParticipacion(Investigador i, String tema) {
+		    if (i == null) {
+		        throw new IllegalArgumentException("El investigador no puede ser nulo.");
+		    }
+
+		    if (tema == null || tema.trim().isEmpty()) {
+		        throw new IllegalArgumentException("El tema no puede ser nulo ni vacío.");
+		    }
+
+		    for (Participacion participacion : participaciones) {
+		        if (participacion.getInvestigador().getId() == i.getId()) {
+		            throw new IllegalArgumentException("El investigador ya participa en esta línea.");
+		        }
+		    }
+
+		    Participacion participacion = new Participacion(
+		        Vicedecanato.getInstancia().generarId(), i, tema
+		    );
+
+		    participaciones.add(participacion);
+		}
 	
-	public void eliminarParticipacion(Investigador i){
-		
-	}
+		public void eliminarParticipacion(Investigador i) {
+		    if (i == null) {
+		        throw new IllegalArgumentException("El investigador no puede ser nulo.");
+		    }
+
+		    Participacion participacionEliminar = null;
+
+		    for (Participacion participacion : participaciones) {
+		        if (participacion.getInvestigador().getId() == i.getId()) {
+		            participacionEliminar = participacion;
+		        }
+		    }
+
+		    if (participacionEliminar == null) {
+		        throw new IllegalArgumentException("El investigador no participa en esta línea.");
+		    }
+
+		    participaciones.remove(participacionEliminar);
+		}
 	
-	public int calcularPuntajeLinea(){
+	
+		public int calcularPuntajeLinea(){
 		return 0;
 	}
 }
